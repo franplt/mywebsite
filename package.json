@@ -1,0 +1,14 @@
+{
+  "name": "franplt-com",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "luxon": "^3.7.2"
+  }
+}

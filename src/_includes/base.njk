@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {% if metaTitle %}{{ metaTitle }}{% else %}{{ title }} — {{ site.title }}{% endif %}
+    </title>
+    <meta name="description" content="{{ description or site.description }}" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:title" content="{% if metaTitle %}{{ metaTitle }}{% else %}{{ title }} — {{ site.title }}{% endif %}" />
+    <meta property="og:description" content="{{ description or site.description }}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:type" content="website" />
+
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="{{ site.title }} — Articles" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <nav aria-label="Primary">
+          <a href="/" {% if navKey === "home" %}aria-current="page"{% endif %}>Home</a>
+          <a href="/about/" {% if navKey === "about" %}aria-current="page"{% endif %}>About</a>
+          <a href="/articles/" {% if navKey === "articles" %}aria-current="page"{% endif %}>Articles</a>
+        </nav>
+      </header>
+      <main id="content">
+        {{ content | safe }}
+      </main>
+    </div>
+  </body>
+</html>
+

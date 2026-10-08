@@ -1,0 +1,17 @@
+---
+layout: base.njk
+navKey: articles
+---
+
+<h1>{{ title }}</h1>
+<div class="article-meta">
+  <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>
+  {% if description %}
+    &nbsp;·&nbsp;{{ description }}
+  {% endif %}
+</div>
+
+<article class="prose">
+  {{ content | safe }}
+</article>
+

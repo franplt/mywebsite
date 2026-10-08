@@ -1,0 +1,33 @@
+---
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% set latest = null %}
+  {% if collections.articles and collections.articles.length %}
+    {% set latest = collections.articles[0].date %}
+  {% endif %}
+
+  <url>
+    <loc>{{ site.url }}/</loc>
+    {% if latest %}<lastmod>{{ latest | isoDate }}</lastmod>{% endif %}
+  </url>
+
+  <url>
+    <loc>{{ site.url }}/about/</loc>
+    {% if latest %}<lastmod>{{ latest | isoDate }}</lastmod>{% endif %}
+  </url>
+
+  <url>
+    <loc>{{ site.url }}/articles/</loc>
+    {% if latest %}<lastmod>{{ latest | isoDate }}</lastmod>{% endif %}
+  </url>
+
+  {% for post in collections.articles %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <lastmod>{{ post.date | isoDate }}</lastmod>
+  </url>
+  {% endfor %}
+</urlset>
+
