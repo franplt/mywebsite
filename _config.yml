@@ -1,0 +1,24 @@
+title: Francesco Paltrinieri
+description: Head of Marketing at TextYess. Italian, based in Lisbon. I write about marketing, AI, and the things I build on the side.
+url: https://franplt.com
+timezone: UTC
+
+collections:
+  articles:
+    output: true
+    permalink: /articles/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: articles
+    values:
+      layout: article
+
+exclude:
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json

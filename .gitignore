@@ -1,4 +1,5 @@
-node_modules/
-dist/
 _site/
+.jekyll-cache/
+.sass-cache/
+.bundle/
 .DS_Store

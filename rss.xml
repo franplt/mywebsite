@@ -1,0 +1,27 @@
+---
+layout: null
+permalink: /rss.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>{{ site.title }} — Articles</title>
+    <link>{{ site.url }}/articles/</link>
+    <description>{{ site.description | escape }}</description>
+    <language>en</language>
+    {% assign posts = site.articles | sort: "date" | reverse %}
+    {% if posts[0] %}
+    <lastBuildDate>{{ posts[0].date | date_to_rfc822 }}</lastBuildDate>
+    {% endif %}
+    {% for post in posts %}
+    <item>
+      <title>{{ post.title | escape }}</title>
+      <link>{{ site.url }}{{ post.url }}</link>
+      <guid>{{ site.url }}{{ post.url }}</guid>
+      <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+      <description>{{ post.description | default: "" | escape }}</description>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
+

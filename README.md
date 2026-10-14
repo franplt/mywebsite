@@ -6,25 +6,23 @@ Francesco Paltrinieri’s personal website.
 
 ### Pages
 
-- **Home**: `src/index.njk`
-- **About**: `src/about.njk`
-- **Articles index**: `src/articles/index.njk`
+- **Home**: `index.html`
+- **About**: `about.md`
+- **Articles index**: `articles/index.html`
 
 ### Add a new article
 
-Add **one Markdown file** under `src/articles/`.
+Add **one Markdown file** under `_articles/`.
 
 Example:
 
-`src/articles/my-new-post.md`
+`_articles/my-new-post.md`
 
 ```md
 ---
 title: My new post
 date: 2026-10-08
 description: One short sentence.
-layout: article.njk
-tags: [article]
 ---
 
 Write the article here in Markdown.
@@ -32,16 +30,8 @@ Write the article here in Markdown.
 
 It will be published at `/articles/my-new-post/`.
 
-## Run locally
+## RSS & sitemap
 
-```bash
-npm install
-npm run dev
-```
-
-## Build
-
-```bash
-npm run build
-```
+- RSS: `/rss.xml`
+- Sitemap: `/sitemap.xml`
 
