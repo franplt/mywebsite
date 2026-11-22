@@ -1,0 +1,32 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% assign posts = site.articles | sort: "date" | reverse %}
+  {% assign latest = posts[0].date | default: site.time %}
+
+  <url>
+    <loc>{{ site.url }}/</loc>
+    <lastmod>{{ latest | date: "%F" }}</lastmod>
+  </url>
+
+  <url>
+    <loc>{{ site.url }}/about/</loc>
+    <lastmod>{{ latest | date: "%F" }}</lastmod>
+  </url>
+
+  <url>
+    <loc>{{ site.url }}/articles/</loc>
+    <lastmod>{{ latest | date: "%F" }}</lastmod>
+  </url>
+
+  {% for post in posts %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <lastmod>{{ post.date | date: "%F" }}</lastmod>
+  </url>
+  {% endfor %}
+</urlset>
+

@@ -1,0 +1,21 @@
+---
+layout: default
+title: Articles
+meta_title: Articles
+description: Writing on marketing, AI, and things I build.
+permalink: /articles/
+---
+
+<h1>Articles</h1>
+<p class="intro">Writing on marketing, AI, and things I build.</p>
+
+<div class="list">
+  {% assign posts = site.articles | sort: "date" | reverse %}
+  {% for post in posts %}
+    <div class="item">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <div class="date">{{ post.date | date: "%b %Y" }}</div>
+    </div>
+  {% endfor %}
+</div>
+
