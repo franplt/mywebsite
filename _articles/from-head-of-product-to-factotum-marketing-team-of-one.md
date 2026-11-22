@@ -1,5 +1,5 @@
 ---
-title: From Head of Product to factotum: running marketing as a team of one
+title: "From Head of Product to factotum: running marketing as a team of one"
 date: 2026-11-20
 description: What changes when you own the whole marketing surface area.
 draft: true
